@@ -1,0 +1,26 @@
+@import "tailwindcss";
+.link-hover {
+    position: relative;
+    color: #4b5563; /* text-gray-600 */
+    transition: color 0.3s;
+  }
+  
+  .link-hover::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #C89F94; /* màu khi hover */
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .link-hover:hover {
+    color: #C89F94;
+  }
+  
+  .link-hover:hover::after {
+    width: 100%;
+  }
+  
