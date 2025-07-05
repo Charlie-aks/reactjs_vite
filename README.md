@@ -1,12 +1,22 @@
-# React + Vite
+# ☕️ CoffeeStyle – Frontend Web App for a Coffee Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CoffeeStyle is a modern and responsive frontend web application built for a coffee shop. It showcases stylish coffee-related products with a clean UI, smooth navigation, and fast performance. The app is built using **ReactJS**, powered by **Vite** for lightning-fast development, and styled with **TailwindCSS**.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 💻 Modern and responsive UI design
+- ⚡ Fast development environment with **Vite**
+- 🌐 Smooth client-side routing using **React Router**
+- 🎨 Beautiful icons integrated with **React Icons**
+- 🧱 Clean and modular ReactJS component structure
 
-## Expanding the ESLint configuration
+## 🛠 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **ReactJS**
+- **Vite**
+- **TailwindCSS**
+- **React Router**
+- **React Icons**
+
+## 📁 Folder Structure (Simplified)
+
