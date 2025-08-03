@@ -1,25 +1,18 @@
 @import "tailwindcss";
 .link-hover {
     position: relative;
-    color: #4b5563; /* text-gray-600 */
-    transition: color 0.3s;
+    display: inline-block;
   }
-  
   .link-hover::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 0%;
     height: 2px;
-    bottom: -4px;
     left: 0;
-    background-color: #C89F94; /* màu khi hover */
+    bottom: -4px; /* hoặc -1px tùy chỉnh */
+    background-color: #C89F94; /* text-gray-600 */
     transition: width 0.3s ease-in-out;
   }
-  
-  .link-hover:hover {
-    color: #C89F94;
-  }
-  
   .link-hover:hover::after {
     width: 100%;
   }

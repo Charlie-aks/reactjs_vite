@@ -9,7 +9,7 @@ const Footer = () => {
           Sign up and get free coffee bags
         </div>
 
-        <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-amber-50">
+        <div className="text-2xl sm:text-4xl md:text-5xl font-mono text-white">
           Coffee Updates
         </div>
 

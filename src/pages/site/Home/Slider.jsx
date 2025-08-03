@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const images = ["/images/slider1.jpg"];
 
 const Slider = () => {
   const [currentIndex] = useState(0);
+  const navigate = useNavigate();
+
+  const handleExploreClick = () => {
+    navigate("/product"); // <-- Link bạn muốn chuyển đến
+  };
   return (
     <div
       className="w-full max-w-[1800px] min-h-[400px] md:h-[700px] bg-cover bg-bottom bg-no-repeat mx-auto"
@@ -23,6 +28,7 @@ const Slider = () => {
         </p>
         <button
           type="button"
+          onClick={handleExploreClick}
           className="w-[280px] sm:w-[300px] h-[50px] sm:h-[60px] mt-4 sm:mt-6 bg-white text-black px-5 py-2 hover:bg-gray-200 transition text-sm tracking-widest font-medium"
         >
           EXPLORE OUR PRODUCTS

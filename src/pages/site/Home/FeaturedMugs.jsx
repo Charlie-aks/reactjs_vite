@@ -1,21 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import allProducts from "../../../data/product"; // Cập nhật đường dẫn phù hợp
 
-const products = [
-  {
-    name: "Pink Premium Ceramic",
-    price: "$99.00 USD",
-    image: "/images/PinkPremiumCeramic.jpg",
-    sale: false,
-  },
-  {
-    name: "Golden Designers Mug",
-    price: "$50.00",
-    image: "/images/GoldenDesignersMug.jpg",
-    sale: true,
-  },
-];
+// Lọc 2 sản phẩm cụ thể theo tên
+const products = allProducts.filter(product =>
+  ["Pink Premium Ceramic", "Golden Designer's Mug"].includes(product.name)
+);
 
 const FeaturedMugs = () => {
+  const navigate = useNavigate(); // dùng để điều hướng khi click
+
   return (
     <div
       data-aos="fade-up"
@@ -36,6 +30,7 @@ const FeaturedMugs = () => {
         {products.map((product, index) => (
           <div
             key={index}
+            onClick={() => navigate(`/product/${product.id}`)} // điều hướng tới trang chi tiết
             className="relative group w-full max-w-[550px] h-auto cursor-pointer"
           >
             <div className="relative hover:opacity-65 transition-all duration-300 ease-in-out">

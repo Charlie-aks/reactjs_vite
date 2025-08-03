@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Introduce = () => {
   return (
     <div
@@ -21,9 +21,7 @@ const Introduce = () => {
         </p>
 
         <p className="text-[#C89F94] hover:text-coffee transition-all underline underline-offset-8 text-base md:text-xl mt-8 md:mt-10">
-          <a href="#" className="block">
-            Read the full Story
-          </a>
+        <Link to="/about" className="link-hover">Read the full Story</Link>
         </p>
       </div>
     </div>

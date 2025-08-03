@@ -3,7 +3,7 @@ import Slider from './Slider'
 import Introduce from './Introduce'
 import FeaturedMugs from './FeaturedMugs'
 import MoreProduct from './MoreProduct'
-import GetourCoffee from './GetourCoffee'
+import GetourCoffee from './GetourCoffee' 
 import BlogSection from './BlogSection'
 
 const Home = () => {
