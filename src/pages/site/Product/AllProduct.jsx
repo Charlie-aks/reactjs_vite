@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import products from "../../../data/product";
-import ProductCard from "../../../component/ProductCard";
+import ProductCard from "../../../components/ProductCard";
 
 
 const categories = [

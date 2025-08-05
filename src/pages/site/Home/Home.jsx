@@ -1,19 +1,17 @@
 import React from 'react'
 import Slider from './Slider'
-import Introduce from './Introduce'
-import FeaturedMugs from './FeaturedMugs'
-import MoreProduct from './MoreProduct'
-import GetourCoffee from './GetourCoffee' 
+import { IntroduceSection, GetCoffeeSection } from './HomeSections'
+import { FeaturedMugsSection, MoreProductsSection } from './HomeProducts'
 import BlogSection from './BlogSection'
 
 const Home = () => {
   return (
     <div>
       <Slider/>
-      <Introduce/>
-      <FeaturedMugs/>
-      <MoreProduct/>
-      <GetourCoffee/>
+      <IntroduceSection/>
+      <FeaturedMugsSection/>
+      <MoreProductsSection/>
+      <GetCoffeeSection/>
       <BlogSection/>
     </div>
   )

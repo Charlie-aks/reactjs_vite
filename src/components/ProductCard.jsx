@@ -1,11 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   const handleNavigate = () => {
     navigate(`/product/${product.id}`);
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addToCart(product);
   };
 
   return (
@@ -27,10 +34,10 @@ const ProductCard = ({ product }) => {
           </div>
         )}
         <button
-          onClick={(e) => e.stopPropagation()} // Ngăn sự kiện nổi bọt
-          className="w-[90%] max-w-[330px] h-[50px] text-xs sm:text-sm md:text-base absolute bottom-4 uppercase left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 bg-white text-gray-900 font-medium"
+          onClick={handleAddToCart}
+          className="w-[90%] max-w-[330px] h-[50px] text-xs sm:text-sm md:text-base absolute bottom-4 uppercase left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 bg-white text-gray-900 font-medium hover:bg-light-coffee hover:text-white transition-colors"
         >
-          Explore Mug
+          Add to Cart
         </button>
       </div>
       <p className="mt-4 text-base sm:text-lg font-semibold text-center">

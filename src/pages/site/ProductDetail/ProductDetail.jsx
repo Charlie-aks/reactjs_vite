@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "../../../data/product";
+import { useCart } from "../../../context/CartContext";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id.toString() === id);
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    for (let i = 0; i < quantity; i++) {
+      addToCart(product);
+    }
+  };
 
   if (!product) {
     return (
@@ -69,7 +77,7 @@ const ProductDetail = () => {
             />
             <button
               className="bg-gray-900 text-white px-6 py-3 text-sm font-semibold uppercase hover:bg-gray-800 transition rounded w-full sm:w-auto"
-              onClick={() => alert("Đã thêm vào giỏ hàng!")}
+              onClick={handleAddToCart}
             >
               Add to Cart
             </button>

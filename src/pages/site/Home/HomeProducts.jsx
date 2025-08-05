@@ -1,14 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import allProducts from "../../../data/product"; // Cập nhật đường dẫn phù hợp
+import ProductCard from "../../../components/ProductCard";
+import allProducts from "../../../data/product";
 
-// Lọc 2 sản phẩm cụ thể theo tên
-const products = allProducts.filter(product =>
-  ["Pink Premium Ceramic", "Golden Designer's Mug"].includes(product.name)
-);
-
-const FeaturedMugs = () => {
-  const navigate = useNavigate(); // dùng để điều hướng khi click
+// Featured Mugs Section Component
+export const FeaturedMugsSection = () => {
+  const navigate = useNavigate();
+  
+  // Lọc 2 sản phẩm cụ thể theo tên
+  const products = allProducts.filter(product =>
+    ["Pink Premium Ceramic", "Golden Designer's Mug"].includes(product.name)
+  );
 
   return (
     <div
@@ -30,7 +32,7 @@ const FeaturedMugs = () => {
         {products.map((product, index) => (
           <div
             key={index}
-            onClick={() => navigate(`/product/${product.id}`)} // điều hướng tới trang chi tiết
+            onClick={() => navigate(`/product/${product.id}`)}
             className="relative group w-full max-w-[550px] h-auto cursor-pointer"
           >
             <div className="relative hover:opacity-65 transition-all duration-300 ease-in-out">
@@ -65,4 +67,50 @@ const FeaturedMugs = () => {
   );
 };
 
-export default FeaturedMugs;
+// More Products Section Component
+export const MoreProductsSection = () => {
+  return (
+    <div className="max-w-[1200px] w-full mx-auto my-16 px-4">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="flex items-center justify-center w-full mb-12 md:mb-28"
+      >
+        <div className="border-t border-gray-400 w-6 md:w-8"></div>
+        <div className="px-4 text-gray-500 text-opacity-50 uppercase text-base font-medium text-center tracking-widest">
+          More Products
+        </div>
+        <div className="border-t border-gray-400 w-6 md:w-8"></div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 place-items-center py-9">
+      {allProducts.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="flex items-center justify-center w-full mb-12 md:mb-28 mt-10"
+      >
+        <div className="border-t border-gray-400 w-6 md:w-8"></div>
+        <div className=" px-4 text-gray-500 text-opacity-50 uppercase text-base font-medium text-center tracking-widest">
+          Buy 2 mugs and get a coffee magazine free
+        </div>
+        <div className="border-t border-gray-400 w-6 md:w-8"></div>
+      </div>
+    </div>
+  );
+};
+
+// Main HomeProducts Component
+const HomeProducts = () => {
+  return (
+    <>
+      <FeaturedMugsSection />
+      <MoreProductsSection />
+    </>
+  );
+};
+
+export default HomeProducts;
