@@ -1,5 +1,6 @@
 import About from "../pages/site/About/About";
 import Blog from "../pages/site/Blog/Blog";
+import BlogDetail from "../pages/site/Blog/BlogDetail";
 import Contact from "../pages/site/Contact/Contact";
 import Home from "../pages/site/Home/Home";
 import AllProduct from "../pages/site/Product/AllProduct";
@@ -13,6 +14,7 @@ const RouteSite = [
     {path: "/", element:Home},
     {path: "/product", element:AllProduct},
     {path: "/blog", element:Blog},
+    {path: "/blog/:id", element:BlogDetail},
     {path: "/category/all-products", element:AllProduct},
     {path: "/category/coffee-mugs", element:CoffeeMug},
     {path: "/category/orthers", element:Orther},
@@ -21,6 +23,6 @@ const RouteSite = [
     {path: "/about", element:About},
     {path: "/contact", element:Contact},
     {path: "/product/:id", element:ProductDetail},
-    {path: "/contact", element:Contact},
-]
-export default RouteSite
+];
+
+export default RouteSite;

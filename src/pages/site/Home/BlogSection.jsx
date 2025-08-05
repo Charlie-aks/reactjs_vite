@@ -1,32 +1,11 @@
 import React from "react";
-
-const blogs = [
-  {
-    title:
-      "Health Check: why do I get a headache when I haven’t had my coffee?",
-    description:
-      "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
-    image: "/images/blog1.jpg",
-    date: "October 9, 2018",
-  },
-  {
-    title: "How long does a cup of coffee keep you awake?",
-    description:
-      "It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.",
-    image: "/images/blog2.jpg",
-    date: "October 9, 2018",
-  },
-  {
-    title:
-      "Recent research suggests that heavy coffee drinkers may reap health benefits.",
-    description:
-      "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
-    image: "/images/blog3.jpg",
-    date: "October 11, 2018",
-  },
-];
+import { Link } from "react-router-dom";
+import allBlogs from "../../../data/blogs";
 
 const BlogSection = () => {
+  // Get first 3 blogs for home page display
+  const blogs = allBlogs.slice(0, 3);
+
   return (
     <div className="w-full bg-white">
       <div className="max-w-[1200px] w-full mx-auto my-16 px-4 sm:px-6 lg:px-8">
@@ -46,11 +25,12 @@ const BlogSection = () => {
         {/* Blog cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
           {blogs.map((blog, index) => (
-            <div
+            <Link
+              key={blog.id || index}
+              to={`/blog/${blog.id || index + 1}`}
               data-aos="fade-up"
               data-aos-duration="1000"
-              key={index}
-              className="w-full"
+              className="w-full block"
             >
               {/* Image with overlay button */}
               <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] group overflow-hidden rounded">
@@ -65,7 +45,7 @@ const BlogSection = () => {
               </div>
               {/* Text content */}
               <div className="mt-4 space-y-2">
-                <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 tracking-wide leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 tracking-wide leading-relaxed group-hover:text-coffee transition-colors">
                   {blog.title}
                 </p>
                 <p className="text-sm sm:text-base text-gray-500 tracking-wide leading-relaxed">
@@ -75,7 +55,7 @@ const BlogSection = () => {
                   {blog.date}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
