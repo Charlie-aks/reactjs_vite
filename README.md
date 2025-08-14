@@ -20,3 +20,4 @@ CoffeeStyle is a modern and responsive frontend web application built for a coff
 
 ## 📁 Folder Structure (Simplified)
 
+...........................................
