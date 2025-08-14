@@ -33,11 +33,8 @@ const ProductCard = ({ product }) => {
             On Sale
           </div>
         )}
-        <button
-          onClick={handleAddToCart}
-          className="w-[90%] max-w-[330px] h-[50px] text-xs sm:text-sm md:text-base absolute bottom-4 uppercase left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 bg-white text-gray-900 font-medium hover:bg-light-coffee hover:text-white transition-colors"
-        >
-          Add to Cart
+        <button className="w-[90%] max-w-[450px] h-[55px] absolute bottom-4 uppercase left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 bg-white text-gray-900 text-sm font-medium">
+          Explore Mug
         </button>
       </div>
       <p className="mt-4 text-base sm:text-lg font-semibold text-center">
